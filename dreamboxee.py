@@ -19,8 +19,11 @@ def loadTVList():
 	mc.GetActiveWindow().GetList(120).SetItems(itemList)
 
 def loadRadioList():
-	mc.ShowDialogNotification("load radiolist. will be implemented later!")
+	mc.ShowDialogNotification("load radiolist. will be implemented soon")
+
+def loadRecordList():
+	mc.ShowDialogNotification("load recordlist. will be implemented soon")
 
 def loadEPG():
-	mc.ShowDialogNotification("load epg. will be implemented later!")
+	mc.ShowDialogNotification("load epg. will be implemented soon")
 

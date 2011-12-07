@@ -68,6 +68,7 @@ dreamboxee.loadRadioList()
                   <texturefocus>ba_overlay.png</texturefocus>
                   <texturenofocus>ba_overlay2.png</texturenofocus>
                   <onclick lang="python"><![CDATA[
+dreamboxee.loadRecordList()
 ]]>
 </onclick>
               </control>

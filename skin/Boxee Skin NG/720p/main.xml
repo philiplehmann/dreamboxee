@@ -99,11 +99,11 @@ dreamboxee.loadEPG()
             </control>
             <control type="image">
                <width>1280</width>
-               <height>400</height>
+               <height>450</height>
                <texture>ba_overlay.png</texture>
             </control>
             <control type="image">
-               <posy>397</posy>
+               <posy>447</posy>
                <width>1280</width>
                <height>3</height>
                <texture>black.png</texture>
@@ -128,7 +128,7 @@ dreamboxee.loadEPG()
                <posy>3</posy>
                <posx>15</posx>
                <width>700</width>
-               <height>394</height>
+               <height>444</height>
                <onup>200</onup>
                <onleft>200</onleft>
                <scrolltime>200</scrolltime>
@@ -170,6 +170,7 @@ dreamboxee.loadEPG()
                </focusedlayout>
                <content type="action">
                   <onclick lang="python"><![CDATA[
+mc.GetPlayer().Stop()
 list = mc.GetActiveWindow().GetList(120)
 item = list.GetItem(list.GetFocusedItem())
 mc.GetPlayer().Play(item)
@@ -178,13 +179,12 @@ mc.GetPlayer().Play(item)
             </control>
          </control>
          <control type="label">
-            <posy>600</posy>
-            <posx>1260</posx>
+            <posy>680</posy>
+            <posx>20</posx>
             <width>400</width>
-            <align>right</align>
             <font>font21</font>
             <color>white</color>
-            <label>Dreamboxee Version 1.0</label>
+            <label>Dreamboxee Version 0.1</label>
          </control>
       </control>
    </controls>

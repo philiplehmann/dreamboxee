@@ -5,3 +5,4 @@ packaging/
 Thumbs.db
 *.pyc
 *.pyo
+test.py

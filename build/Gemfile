@@ -1,6 +1,0 @@
-source 'http://rubygems.org'
-
-gem 'rake'
-gem 'rspec'
-gem 'xml-simple'
-gem 'rubyzip'

@@ -6,6 +6,7 @@ current_navigation = 'none'
 tv_services = None
 tv_list = None
 epg_events = None
+radio_services = None
 config = mc.GetApp().GetLocalConfig()
 
 def loadTVList(update = False):
@@ -19,10 +20,24 @@ def loadTVList(update = False):
 	mc.GetActiveWindow().GetList(120).SetItems(createTVList(False))
 
 def loadRadioList():
-	global current_navigation
+	global current_navigation, config, radio_services
 	current_navigation = 'radio'
-	mc.GetActiveWindow().GetList(120).SetItems(mc.ListItems())
-	mc.ShowDialogNotification("load radiolist. will be implemented soon")
+	if radio_services is None:
+		ipaddress = config.GetValue("ipaddress")
+		radio_url = "http://" + ipaddress + "/web/getservices?sRef=1:7:2:0:0:0:0:0:0:0:(type%20==%202)%20ORDER%20BY%20name"
+		radio_data = mc.Http().Get(radio_url)
+		radio_services = BeautifulStoneSoup(radio_data)
+	
+	# create new list
+	itemList = mc.ListItems()
+	for service in radio_services.findAll('e2service'):
+		item = mc.ListItem(mc.ListItem.MEDIA_AUDIO_RADIO)
+		
+		reference = service.e2servicereference.renderContents()
+		item.SetPath("http://" + ipaddress + "/web/stream.m3u?ref=" + reference)
+		item.SetLabel(service.e2servicename.renderContents())
+		itemList.append(item)
+	mc.GetActiveWindow().GetList(120).SetItems(itemList)
 
 def loadRecordList():
 	global current_navigation
@@ -80,7 +95,7 @@ def createTVList(update = False):
 				label += " " + title
 				item.SetDescription(desc, False)
 			except ValueError:
-				print "no valid data available, skip channel"
+				print "no valid data available, skip channel: " + service.e2servicename.renderContents()
 			
 		item.SetLabel(label)
 		itemList.append(item)

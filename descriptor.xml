@@ -1,7 +1,7 @@
 <app>
   <id>ch.alphaworld.dreamboxee</id>
   <name>Dreamboxee</name>
-  <version>0.1</version>
+  <version>0.2</version>
   <description>Play TV from Dreambox with enigma2</description>
   <thumb>http://github.com/philiplehmann/dreamboxee/raw/master/thumb.png</thumb>
   <repository>http://dir.boxee.tv/apps</repository>

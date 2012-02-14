@@ -184,7 +184,7 @@ mc.GetPlayer().Play(item)
             <width>400</width>
             <font>font21</font>
             <color>white</color>
-            <label>Dreamboxee Version 0.1</label>
+            <label>Dreamboxee Version 0.2</label>
          </control>
       </control>
    </controls>

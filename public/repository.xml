@@ -1,7 +1,0 @@
-<repository>
-   <id>ch.alphaworld</id>
-   <url>http://boxee.alphaworld.ch</url>
-   <name>alphaworld</name>
-   <thumb>http://github.com/philiplehmann/dreamboxee/raw/master/thumb.png</thumb>
-   <description>Official boxee.alphaworld.ch repository.</description>
-</repository>
